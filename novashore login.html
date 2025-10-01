@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NovaStore — Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--brand:#0b6efd;
+--dark:#0f1724;
+--muted:#6b7280;
+--card:#ffffff;
+font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);color:var(--dark);display:flex;justify-content:center;align-items:center;height:100vh}
+.login-box{background:white;padding:32px;border-radius:14px;box-shadow:0 6px 20px rgba(13,38,76,0.06);width:100%;max-width:380px}
+h1{text-align:center;color:var(--brand);margin:0 0 20px;font-size:24px}
+label{display:block;margin:12px 0 6px;font-weight:600}
+input{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(15,23,36,0.15);font-size:15px}
+button{margin-top:18px;width:100%;padding:12px;border-radius:8px;border:none;background:var(--brand);color:white;font-weight:700;font-size:15px;cursor:pointer}
+.extra{text-align:center;margin-top:14px;font-size:13px;color:var(--muted)}
+.extra a{color:var(--brand);text-decoration:none;font-weight:600}
+</style>
+</head>
+<body>
+<div class="login-box">
+<h1>NovaStore</h1>
+<form onsubmit="return login(event)">
+<label for="user">Usuario o correo</label>
+<input type="text" id="user" required>
+
+
+<label for="pass">Contraseña</label>
+<input type="password" id="pass" required>
+
+
+<button type="submit">Iniciar sesión</button>
+</form>
+<div class="extra">
+¿No tienes cuenta? <a href="#">Regístrate</a><br>
+<a href="#">¿Olvidaste tu contraseña?</a>
+</div>
+</div>
+
+
+<script>
+function login(e){
+e.preventDefault();
+const user = document.getElementById('user').value;
+const pass = document.getElementById('pass').value;
+if(user === 'demo' && pass === '1234'){
+alert('Bienvenido ' + user + '!');
+// Aquí redirigirías al home
+window.location.href = 'index.html';
+} else {
+alert('Credenciales incorrectas');
+}
+}
+</script>
+</body>
+</html>

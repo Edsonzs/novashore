@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NovaStore — Productos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--brand:#0b6efd;
+--dark:#0f1724;
+--muted:#6b7280;
+font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#f9fafb;color:var(--dark)}
+header{background:var(--brand);color:white;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:20px}
+main{padding:24px}
+h1{margin-bottom:20px}
+table{width:100%;border-collapse:collapse;background:white;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
+th, td{padding:14px;text-align:center;border-bottom:1px solid #e5e7eb}
+th{background:#f1f5f9;font-weight:600}
+img{width:80px;height:80px;object-fit:cover;border-radius:8px}
+button{padding:8px 12px;border:none;border-radius:6px;cursor:pointer;background:var(--brand);color:white;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">NovaStore</div>
+</header>
+
+
+<main>
+<h1>Catálogo de Productos</h1>
+<table>
+<thead>
+<tr>
+<th>Imagen</th>
+<th>Producto</th>
+<th>Descripción</th>
+<th>Precio</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="auriculares.jpg" alt="Auriculares"></td>
+<td>Auriculares Inalámbricos</td>
+<td>Cancelación de ruido, batería 20h</td>
+<td>$1,299 MXN</td>
+<td><button onclick="seleccionar('Auriculares Inalámbricos')">Seleccionar</button></td>
+</tr>
+<tr>
+<td><img src="Smartphone.jpg" alt="Smartphone"></td>
+<td>Smartphone Z</td>
+<td>Pantalla 6.7", 128GB</td>
+<td>$6,499 MXN</td>
+<td><button onclick="seleccionar('Smartphone Z')">Seleccionar</button></td>
+</tr>
+</html

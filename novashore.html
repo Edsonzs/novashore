@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NovaStore — Tu tienda en línea</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--brand:#0b6efd;
+--dark:#0f1724;
+--muted:#6b7280;
+--card:#ffffff;
+--glass: rgba(255,255,255,0.06);
+font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,#f7fbff 0%, #eef6ff 100%);color:var(--dark)}
+header{background:linear-gradient(90deg,var(--card),#f8fafc);padding:14px 28px;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:20;border-bottom:1px solid rgba(15,23,36,0.04)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand);font-size:20px}
+.logo .mark{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#8ab4ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+.search{flex:1;display:flex}
+.search input{flex:1;padding:12px 14px;border-radius:8px;border:1px solid rgba(15,23,36,0.08);font-size:15px}
+.search button{margin-left:8px;padding:10px 14px;border-radius:8px;border:none;background:var(--brand);color:white;font-weight:600}
+nav{display:flex;gap:12px;margin-left:12px}
+.cta{margin-left:auto;display:flex;gap:12px;align-items:center}
+.btn{padding:10px 14px;border-radius:8px;border:1px solid rgba(15,23,36,0.06);background:white}
+.hero{display:grid;grid-template-columns:1fr 420px;gap:24px;padding:28px}
+.hero-card{background:linear-gradient(180deg,#ffffff,#f8fbff);padding:26px;border-radius:14px;box-shadow:0 6px 20px rgba(13,38,76,0.06)}
+.hero h1{margin:0 0 10px;font-size:28px}
+.hero p{margin:0 0 18px;color:var(--muted)}
+.features{display:flex;gap:10px;flex-wrap:wrap}
+.feature{background:var(--glass);padding:10px 12px;border-radius:10px;font-size:14px;color:var(--muted)}
+.sidebar-banner{border-radius:12px;padding:18px;background:linear-gradient(135deg,#ffedd5,#fff7ed);text-align:center}
+.products{padding:20px 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:white;border-radius:12px;padding:12px;box-shadow:0 4px 18px rgba(15,23,36,0.05);display:flex;flex-direction:column;gap:10px}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+.price{font-weight:700}
+.old{color:var(--muted);text-decoration:line-through;font-size:13px}
+.badge{background:#eefbe8;color:#065f46;padding:6px 8px;border-radius:999px;font-size:12px;font-weight:600;display:inline-block}
+footer{margin-top:28px;padding:28px;background:#0b1220;color:#cbd5e1}
+.footer-grid{display:flex;gap:24px;flex-wrap:wrap}
+@media(max-width:1000px){.products{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr}}
+@media(max-width:600px){header{padding:12px} .products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">
+<div class="mark">NS</div>
+<div>
+NovaStore
+<div style="font-size:12px;color:var(--muted);font-weight:500">Compra fácil · Envío rápido</div>
+</div>
+</div>
+
+
+<div class="search">
+<input id="q" placeholder="Buscar productos, marcas y más..."/>
+<button onclick="buscar()">Buscar</button>
+</div>
+
+
+<nav>
+<div class="link">Ofertas</div>
+<div class="link">Categorias</div>
+<div class="link">Vender</div>
+</nav>
+
+
+<div class="cta">
+<button class="btn" onclick="toggleAccount()">Iniciar sesión</button>
+<button class="btn" onclick="viewCart()">Carrito (<span id="cart-count">0</span>)</button>
+</div>
+</header>
+
+
+<main>
+<section class="hero">
+<div class="hero-card">
+<h1>Bienvenido a <span style="color:var(--brand)">NovaStore</span></h1>
+<p>Encuentra miles de productos con envío rápido y precios competitivos. Explora ofertas diarias y recomendaciones personalizadas.</p>
+<div class="features">

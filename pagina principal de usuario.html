@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>NovaStore — Página principal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--brand:#0b6efd;
+--dark:#0f1724;
+--muted:#6b7280;
+font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#f9fafb;color:var(--dark)}
+header{background:var(--brand);color:white;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:700;font-size:20px}
+nav{display:flex;gap:14px}
+nav a{color:white;text-decoration:none;font-weight:500}
+main{padding:24px}
+.welcome{margin-bottom:20px;font-size:20px;font-weight:600}
+.card{background:white;border-radius:10px;padding:20px;box-shadow:0 4px 10px rgba(0,0,0,0.05);margin-bottom:18px}
+.hidden{display:none}
+button{padding:8px 12px;border:none;border-radius:6px;cursor:pointer;background:var(--brand);color:white;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">NovaStore</div>
+<nav>
+<a href="#" onclick="showSection('cliente')">Cliente</a>
+<a href="#" onclick="showSection('admin')">Administrador</a>
+<a href="#" onclick="showSection('vendedor')">Vendedor</a>
+</nav>
+</header>
+
+
+<main>
+<div class="welcome" id="welcome">Bienvenido a NovaStore</div>
+
+
+<!-- Cliente -->
+<section id="cliente" class="card hidden">
+<h2>Zona Cliente</h2>
+<p>Explora productos, accede a tus pedidos y consulta tus recomendaciones personalizadas.</p>
+<button onclick="alert('Mostrando catálogo de productos...')">Ver productos</button>
+</section>
+
+
+<!-- Administrador -->
+<section id="admin" class="card hidden">
+<h2>Panel de Administración</h2>
+<p>Gestiona usuarios, productos y revisa estadísticas de ventas.</p>
+<button onclick="alert('Entrando al panel de administración...')">Acceder</button>
+</section>
+
+
+<!-- Vendedor -->
+<section id="vendedor" class="card hidden">
+<h2>Zona Vendedor</h2>
+<p>Publica nuevos productos, revisa tus ventas y administra tu inventario.</p>
+<button onclick="alert('Agregando nuevo producto...')">Agregar producto</button>
+</section>
+</main>
+
+
+<script>
+function showSection(role){
+document.querySelectorAll('section').forEach(s => s.classList.add('hidden'));
+document.getElementById(role).classList.remove('hidden');
+document.getElementById('welcome').innerText = 'Bienvenido, perfil ' + role;
+}
+</script>
+</body>
+</html>
